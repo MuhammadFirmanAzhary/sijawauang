@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SijawaRuang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5); /* Hitam transparan */
+            transition: background-color 0.3s, box-shadow 0.3s;
+            padding: 0.5rem 1rem;
+        }
+        .navbar.transparent .nav-link,
+        .navbar.transparent .navbar-brand {
+            color: white !important;
+        }
+        .navbar.scrolled {
+            background-color: #ffffff; /* Putih saat di-scroll */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar.scrolled .nav-link,
+        .navbar.scrolled .navbar-brand {
+            color: black !important;
+        }
+        .navbar .nav-link {
+            font-size: 0.9rem; /* Ukuran font tautan */
+            padding: 0.5rem 1rem; /* Padding navbar */
+        }
+        .navbar .navbar-brand {
+            font-size: 1.2rem;
+        }
+        .navbar-brand img {
+            width: 45px;
+            height: 45px;
+        }
+
+        /* Gambar carousel agar tetap proporsional */
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+        }
+
+        /* Facilities Cards Styling */
+        .facilities-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .facilities-card:hover {
+            transform: scale(1.05);
+        }
+        .facilities-card i {
+            font-size: 3rem;
+            color: #b30000;
+            margin-bottom: 10px;
+        }
+        .facilities-card h5 {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top transparent">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="asset/logo.png" alt="Logo" class="me-2">
+                SijawaRuang
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fasilitas">Fasilitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                    <!-- New Layanan menu item -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Layanan
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="layananDropdown">
+                            <li><a class="dropdown-item" href="#kamar">Kamar</a></li>
+                            <li><a class="dropdown-item" href="#aula">Aula</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Carousel Header Images -->
+    <div id="home" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="asset/702760.png" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="asset/1342988.png" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="asset/241273.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#home" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Facilities Cards Section -->
+    <section id="fasilitas" class="container my-5">
+        <!-- FASILITAS Title -->
+        <h2 class="text-center mb-4">Fasilitas</h2>
+
+        <div class="row">
+            <!-- Free WiFi Card -->
+            <div class="col-md-4 mb-4">
+                <div class="facilities-card">
+                    <i class="bi bi-wifi"></i>
+                    <h5>Gratis WiFi</h5>
+                    <p>Akses internet cepat dan gratis di seluruh area.</p>
+                </div>
+            </div>
+
+            <!-- Healthcare Card -->
+            <div class="col-md-4 mb-4">
+                <div class="facilities-card">
+                    <i class="bi bi-heart-pulse"></i>
+                    <h5>Layanan Kesehatan</h5>
+                    <p>Fasilitas layanan kesehatan tersedia 24/7.</p>
+                </div>
+            </div>
+
+            <!-- Security Card -->
+            <div class="col-md-4 mb-4">
+                <div class="facilities-card">
+                    <i class="bi bi-shield-lock"></i>
+                    <h5>Security</h5>
+                    <p>Keamanan terbaik dengan petugas yang berjaga 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about-us" class="container text-center my-5">
+        <h2>About Us</h2>
+        <p>SijawaRuagn adalah platform yang memudahkan Anda menemukan dan memesan aula serta ruang acara sesuai kebutuhan. 
+            Kami menyediakan pilihan ruang yang nyaman dan berfasilitas lengkap, cocok untuk berbagai jenis acara. 
+            Dengan proses pemesanan yang mudah dan cepat, kami siap membantu Anda mewujudkan acara yang sukses di lokasi yang tepat.
+            Temukan ruang terbaik untuk momen Anda bersama SijawaRuagn!
+            Mari temukan ruang impian Anda dengan SijawaRuang – solusi pemesanan ruang yang cepat, praktis, dan terpercaya!</p>
+    </section>
+
+    <!-- Kamar Section -->
+    <section id="kamar" class="container my-5">
+        <h2 class="text-center">Pilih Kamar</h2>
+        <div class="row">
+            <!-- Kamar Cards with Price, Facilities, and Booking Button -->
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="asset/702760.png" class="card-img-top" alt="Kamar">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 1</h5>
+                        <p>Harga: Rp500,000 per bulan</p>
+                        <p>Fasilitas: WiFi, AC, TV, Kamar Mandi Dalam</p>
+                        <a href="booking.php" class="btn btn-primary">Booking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="asset/702760.png" class="card-img-top" alt="Kamar">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 2</h5>
+                        <p>Harga: Rp750,000 per bulan</p>
+                        <p>Fasilitas: WiFi, AC, TV, Mini Bar, Balkon</p>
+                        <a href="booking.php" class="btn btn-primary">Booking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="asset/702760.png" class="card-img-top" alt="Kamar">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 3</h5>
+                        <p>Harga: Rp1,000,000 per bulan</p>
+                        <p>Fasilitas: WiFi, AC, TV, Mini Bar, Balkon, Sarapan Gratis</p>
+                        <a href="booking.php" class="btn btn-primary">Booking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <img src="asset/702760.png" class="card-img-top" alt="Kamar">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 4</h5>
+                        <p>Harga: Rp1,500,000 per bulan</p>
+                        <p>Fasilitas: WiFi, AC, TV, Mini Bar, Balkon, Jacuzzi, Sarapan Gratis</p>
+                        <a href="booking.php" class="btn btn-primary">Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aula Section -->
+    <section id="aula" class="container my-5">
+        <h2 class="text-center">Pilih Aula</h2>
+        <div class="row">
+            <!-- Aula Cards with Price, Facilities, and Booking Button -->
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="asset/702760.png" class="card-img-top" alt="Aula">
+                    <div class="card-body">
+                        <h5 class="card-title">Aula 1</h5>
+                        <p>Harga: Rp3,000,000 per hari</p>
+                        <p>Fasilitas: AC, Projector, Sound System, Kapasitas 100 Orang</p>
+                        <a href="booking.php" class="btn btn-primary">Booking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="asset/702760.png" class="card-img-top" alt="Aula">
+                    <div class="card-body">
+                        <h5 class="card-title">Aula 2</h5>
+                        <p>Harga: Rp5,000,000 per hari</p>
+                        <p>Fasilitas: AC, Projector, Sound System, Panggung, Kapasitas 200 Orang</p>
+                        <a href="booking.php" class="btn btn-primary">Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="container my-5">
+        <h2 class="text-center">Kontak Kami</h2>
+        <p class="text-center">Hubungi kami melalui informasi berikut:</p>
+        <div class="text-center">
+            <p><i class="bi bi-telephone-fill"></i> Telepon: +62 895-0407-6368</p>
+            <p><i class="bi bi-envelope-fill"></i> Email: info@sijawaruang.com</p>
+            <p><i class="bi bi-geo-alt-fill"></i> Alamat: Jl. Contoh No.1, Kota Jakarta</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2024 SijawaRuang. All rights reserved.</p>
+            <p>
+                <a href="#" class="text-white me-3">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('transparent');
+            } else {
+                navbar.classList.add('transparent');
+                navbar.classList.remove('scrolled');
+            }
+        });
+    
+
+    </script>
+
+    
+</body>
+</html>
